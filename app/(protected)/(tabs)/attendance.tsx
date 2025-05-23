@@ -4,6 +4,19 @@ import React from "react";
 import { ScrollView, Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
+const attendanceData = [
+  {
+    week: 1,
+    days: [
+      { day: 'Monday', status: 'present' },
+      { day: 'Tuesday', status: 'absent' },
+      { day: 'Wednesday', status: 'no-school' },
+      { day: 'Thursday', status: 'present' },
+      { day: 'Friday', status: 'present' }
+    ]
+  }
+];
+
 const AttendanceScreen = () => {
   return (
     <SafeAreaView className="flex-1 bg-white p-5">
@@ -23,6 +36,7 @@ const AttendanceScreen = () => {
         </View>
         <Text className="text-lg font-semibold text-gray-500">Week 13</Text>
       </View>
+
 
       {/* Status Card */}
       <View className="bg-gray-50 rounded-xl p-5 mb-6">
@@ -49,3 +63,4 @@ const AttendanceScreen = () => {
 };
 
 export default AttendanceScreen;
+

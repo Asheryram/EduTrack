@@ -7,7 +7,7 @@ import { SafeAreaView } from "react-native-safe-area-context";
 
 type ActivityItem = {
   label: string;
-  route: string; // This matches your Expo Router file-based routes
+  route: string; 
 };
 
 const ActivitiesGrid = () => {

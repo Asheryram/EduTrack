@@ -34,6 +34,9 @@ import { SafeAreaView } from "react-native-safe-area-context";
 export default function LoginScreen() {
   const router = useRouter();
 
+  
+
+
   const {
     username,
     password,
@@ -131,12 +134,6 @@ export default function LoginScreen() {
                  <Text className="text-blue-400 font-medium"> Register here</Text>
                 </TouchableOpacity>
               </View>
-              <TouchableOpacity
-                  onPress={() => router.push("/_sitemap")}
-                  
-                >
-                 <Text className="text-blue-400 font-medium"> Site map</Text>
-                </TouchableOpacity>
             </View>
           </View>
         </ScrollView>

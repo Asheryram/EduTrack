@@ -1,8 +1,20 @@
+import { useAuthStore } from "@/store/useAuthStore";
+import { useRouter } from "expo-router";
 import React from "react";
 import { Image, Text, TouchableOpacity, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
 const OnboardingScreen = () => {
+      const completeOnboarding = useAuthStore((state) => state.completeOnboarding);
+
+    const router = useRouter();
+  
+const getStarted = ()=>{
+    console.log("User completed onboarding");
+    completeOnboarding()
+  // router.replace('/sign-in')
+}
+
   return (
     <SafeAreaView className="flex-1 bg-blue-300  ">
       <View className="flex-1   justify-center items-center  ">
@@ -32,7 +44,7 @@ const OnboardingScreen = () => {
           </Text>
         </View>
 
-        <TouchableOpacity className="bg-blue-500 py-4 px-8 rounded-full w-full max-w-xs mb-4">
+        <TouchableOpacity onPress={getStarted} className="bg-blue-500 py-4 px-8 rounded-full w-full max-w-xs mb-4">
           <Text className=" text-white text-lg font-bold text-center">
             Get Started
           </Text>

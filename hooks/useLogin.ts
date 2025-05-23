@@ -1,41 +1,42 @@
-import { AuthContext } from '@/store/authContext';
-import { useContext, useState } from 'react';
-import { Alert } from 'react-native';
+import { useAuthStore } from "@/store/useAuthStore";
+import { useUserStore } from "@/store/userStore";
+import { useRouter } from "expo-router";
+import { useState } from "react";
+import { Alert } from "react-native";
 
 export function useLogin() {
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
   const [rememberMe, setRememberMe] = useState(false);
-  const [error, setError] = useState('');
-const authContext = useContext(AuthContext);
+  const [error, setError] = useState("");
+  const logIn = useAuthStore((state) => state.logIn);
+  const USER_STORE_setUser = useUserStore((state) => state.setUser);
+  const router = useRouter();
 
   const handleLogin = () => {
-    setError('');
+    setError("");
 
     if (!username || !password) {
-      setError('Please fill in all fields.');
+      setError("Please fill in all fields.");
       return;
     }
 
     // Simulated login logic
-    Alert.alert('Login Successful', `Welcome, ${username}!`);
+    Alert.alert("Login Successful", `Welcome, ${username}!`);
     console.log({ username, password, rememberMe });
-    authContext.logIn();
+    USER_STORE_setUser({ name: username });
+    logIn();
     // Reset fields after login
-    setUsername('');
-    setPassword('');
+    setUsername("");
+    setPassword("");
     setRememberMe(false);
-    // Navigate to the home screen or perform any other action  
-
-
+    // Navigate to the home screen or perform any other action
+    router.replace("/home");
   };
 
-  
-
   const handleGoogleLogin = () => {
-    Alert.alert('Google Login', 'Google Sign-In pressed');
-        authContext.logIn();
-
+    Alert.alert("Google Login", "Google Sign-In pressed");
+    logIn();
   };
 
   return {
