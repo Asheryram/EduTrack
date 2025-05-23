@@ -10,7 +10,7 @@ export default function BottomTabsLayout() {
         tabBarLabelStyle: {
           fontSize: 12,
         },
-       
+
         tabBarStyle: {
           right: 20,
           left: 20,
@@ -18,7 +18,7 @@ export default function BottomTabsLayout() {
           marginHorizontal: 30,
           marginVertical: 10,
           position: "absolute",
-        }
+        },
       }}
       backBehavior="order"
     >
@@ -35,6 +35,27 @@ export default function BottomTabsLayout() {
               color={color}
             />
           ),
+        }}
+      />
+      <Tabs.Screen
+        name="assignment"
+        options={{
+          href: null,
+          headerShown: false,
+        }}
+      />
+      <Tabs.Screen
+        name="attendance"
+        options={{
+          href: null,
+          headerShown: false,
+        }}
+      />
+      <Tabs.Screen
+        name="child-profile"
+        options={{
+          href: null,
+          headerShown: false,
         }}
       />
 
