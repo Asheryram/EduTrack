@@ -52,6 +52,20 @@ export default function BottomTabsLayout() {
         }}
       />
       <Tabs.Screen
+        name="school-fees"
+        options={{
+          href: null,
+          headerShown: false,
+        }}
+      />
+      <Tabs.Screen
+        name="(teachers)"
+        options={{
+          href: null,
+          headerShown: false,
+        }}
+      />
+      <Tabs.Screen
         name="child-profile"
         options={{
           href: null,

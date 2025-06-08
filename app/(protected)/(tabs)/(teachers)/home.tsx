@@ -1,5 +1,5 @@
 import HeaderWithMenu from "@/components/Header";
-import { ParentGreeting } from "@/components/ParentGreeting";
+import { TeacherGreeting } from "@/components/TeacherGreeting";
 import { useRouter } from 'expo-router';
 import React from "react";
 import { ScrollView, Text, TouchableOpacity, View } from "react-native";
@@ -20,7 +20,7 @@ const ActivitiesGrid = () => {
     { label: "Chats", route: "/" },
 
 
-    { label: "SChoolFeesScreen", route: "/school-fees" },
+    { label: "SchoolFeesScreen", route: "/school-fees" },
   ];
 
   return (
@@ -54,7 +54,7 @@ export default function HomeScreen() {
       {/* Main Content */}
       <ScrollView className="flex-1 pt-16"> 
         {/* Greeting */}
-        <ParentGreeting/>
+        <TeacherGreeting/>
 
         {/* Rest of your content remains the same */}
         {/* Child Info */}
