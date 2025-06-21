@@ -72,7 +72,13 @@ export default function BottomTabsLayout() {
           headerShown: false,
         }}
       />
-
+      <Tabs.Screen
+        name="time-table"
+        options={{
+          href: null,
+          headerShown: false,
+        }}
+      />
       <Tabs.Screen
         name="calendar"
         options={{
